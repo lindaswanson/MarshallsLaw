@@ -1,14 +1,14 @@
 //
-//  DrinkPromptView.swift
+//  FoodPromptView.swift
 //  MarshallsLaw Watch App
 //
-//  Created by Linda Swanson on 3/24/25.
+//  Created by Linda Swanson on 4/1/25.
 //
 
 import SwiftUI
 
 /*
- enum DrinkAnswer: String, CaseIterable {
+ enum FoodAnswer: String, CaseIterable {
  case healthy
  case unhealthy
  case nothing
@@ -17,22 +17,22 @@ import SwiftUI
 
 // https://www.hackingwithswift.com/books/ios-swiftui/working-with-identifiable-items-in-swiftui
 
-struct DrinkAnswer: Identifiable {
+struct FoodAnswer: Identifiable {
     var id = UUID()
     var name: String
     // setting up to do the increment within the foreach loop
     @State private var value: Int = 0
 }
 
-func getDrinkAnswer(drink: DrinkAnswer) -> String? {
+func getFoodAnswer(food: FoodAnswer) -> String? {
     return nil
 }
 
-struct DrinkPromptView: View {
-    var drinkOptions: [DrinkAnswer] = [
-        DrinkAnswer(name: "👍 Healthy"),
-        DrinkAnswer(name: "👎 Unhealthy"),
-        DrinkAnswer(name: "❌ Nothing")
+struct FoodPromptView: View {
+    var foodOptions: [FoodAnswer] = [
+        FoodAnswer(name: "👍 Healthy"),
+        FoodAnswer(name: "👎 Unhealthy"),
+        FoodAnswer(name: "❌ Nothing")
     ]
     
     var body: some View {
@@ -40,11 +40,11 @@ struct DrinkPromptView: View {
             ZStack {
                 BackgroundGradientView()
                 VStack {
-                    Text("Did you drink something?")
+                    Text("Did you eat something?")
                         .font(.subheadline)
                     ScrollView {
-                        ForEach(drinkOptions) { drinkOption in
-                            Button(drinkOption.name){
+                        ForEach(foodOptions) { foodOption in
+                            Button(foodOption.name){
                                 // store selection
                                 // increment value
                                 // navigate to confirmation view
@@ -59,8 +59,8 @@ struct DrinkPromptView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Image(systemName: "waterbottle.fill")
-                        .foregroundStyle(.waterBottleBlue)
+                    Image(systemName: "fork.knife.circle.fill")
+                        .foregroundStyle(.forkKnifeGreen)
                         .font(.system(size: 28))
                 }
             }
@@ -70,5 +70,5 @@ struct DrinkPromptView: View {
 
 
 #Preview {
-    DrinkPromptView()
+    FoodPromptView()
 }

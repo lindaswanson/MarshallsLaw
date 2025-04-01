@@ -10,26 +10,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            // Background Gradient
-            LinearGradient(gradient: Gradient(colors: [Color("TopBlack"), Color("DeepBlue")]), startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-                .opacity(0.99)
-            
-            VStack(spacing: 12) {
+            BackgroundGradientView()
+            VStack {
                 // Header with Icon and Title
                 VStack {
-                    Image(systemName: "MarshallsLawLogo")
-                        .font(.system(size: 40))
-                        .foregroundColor(.blue)
-                    
-                    Text("MARSHALL’S LAW")
-                        .font(.headline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
+                    Image("MarshallsLawLogo")
+                        .resizable()
+                        .scaledToFill()
                 }
                 
                 // Buttons for Food and Drink
-                VStack(spacing: 10) {
+                VStack {
                     Button(action: {
                         print("Food button tapped")
                     }) {
@@ -41,7 +32,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
+                        //.background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
                     }
                     
                     Button(action: {
@@ -54,7 +45,7 @@ struct ContentView: View {
                         }
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
+                        //.background(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 2))
                     }
                 }
                 .padding(.horizontal, 10)
