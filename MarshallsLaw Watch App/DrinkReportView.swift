@@ -1,13 +1,13 @@
 //
-//  FoodReportView.swift
+//  DrinkReportView.swift
 //  Marshalls Law Watch App
 //
-//  Created by Floyd Simpson on 3/27/25.
+//  Created by Floyd Simpson on 4/1/25.
 //
 
 import SwiftUI
 
-struct FoodReportView: View {
+struct DrinkReportView: View {
     var body: some View {
         NavigationStack {
             ZStack {
@@ -39,9 +39,9 @@ struct FoodReportView: View {
                     
                     // Progress Bars Section
                     VStack(spacing: 12) {
-                        ProgressRowView(label: "HEALTHY", percent: 0.30, color: .green)
-                        ProgressRowView(label: "UNHEALTHY", percent: 0.10, color: .yellow)
-                        ProgressRowView(label: "SKIPS", percent: 0.60, color: .red)
+                        ProgressRowView(label: "HEALTHY", percent: 0.50, color: .green)
+                        ProgressRowView(label: "UNHEALTHY", percent: 0.40, color: .yellow)
+                        ProgressRowView(label: "SKIPS", percent: 0.10, color: .red)
                         //  .padding(.top, 10)
                     }
                     //  .padding(.top, 10)
@@ -62,17 +62,17 @@ struct FoodReportView: View {
             .navigationTitle("Today")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Image(systemName: "fork.knife.circle.fill")
+                    Image(systemName: "waterbottle.fill")
                     
-                        .foregroundStyle(.forkKnifeGreen)
+                        .foregroundStyle(.waterBottleBlue)
                         .font(.system(size: 30))
                 }
             }
         }
     }
 }
-
+    
 
 #Preview {
-    FoodReportView()
+    DrinkReportView()
 }
